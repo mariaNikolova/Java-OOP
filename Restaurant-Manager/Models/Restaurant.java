@@ -6,13 +6,13 @@ public class Restaurant implements IRestaurant {
 	private List<IRecipe> recipes;
 	
 	public Restaurant(String newName, String newLocation){
-		this.name = newName;
-		this.location = newLocation;
+		this.setName(newName);
+		this.setLocation(newLocation);
 	}
 	public Restaurant(String newName, String newLocation, List<IRecipe> newRecipes){
-		this.name = newName;
-		this.location = newLocation;
-		this.recipes = newRecipes;
+		this.setName(newName);
+		this.setLocation(newLocation);
+		this.setRecipes(newRecipes);
 	}
 	@Override
 	public String getName() {

@@ -7,7 +7,7 @@ public class Drink extends Recipe implements IDrink {
 	public Drink(String name, double price, int calories, int quantityPerServing, MetricUnit unit,
             int timeToPrepare, boolean isCarbonated){
 		super(name, price, calories, quantityPerServing, MetricUnit.Milliliters, timeToPrepare);
-		this.isCarbonated = isCarbonated;
+		this.setIsCarbonated(isCarbonated);
 	}
 	@Override
 	public boolean getIsCarbonated() {

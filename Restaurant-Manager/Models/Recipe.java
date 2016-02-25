@@ -9,12 +9,12 @@ public abstract class Recipe implements IRecipe {
 	
 	public Recipe(String newName, double newPrice, int newCalories, int newQuantityPerServing,
 			MetricUnit newUnit,int newTimeToPrepare){
-		this.name = newName;
-		this.price = newPrice;
-		this.calories = newCalories;
-		this.quantityPerServing = newQuantityPerServing;
-		this.unit = newUnit;
-		this.timeToPrepare = newTimeToPrepare;
+		this.setName(newName);
+		this.setPrice(newPrice);
+		this.setCalories(newCalories);
+		this.setQuantityPerServing(newQuantityPerServing);
+		this.setUnit(newUnit);
+		this.setTimeToPrepare(newTimeToPrepare);
 	}
 	@Override
 	public String getName() {
@@ -22,6 +22,9 @@ public abstract class Recipe implements IRecipe {
 	}
 	@Override
 	public void setName(String value) {
+		if(value.isEmpty()){
+			throw new IllegalArgumentException("The name can't be empty!");
+		}
 		this.name = value;
 		
 	}
@@ -31,6 +34,9 @@ public abstract class Recipe implements IRecipe {
 	}
 	@Override
 	public void setPrice(double value) {
+		if(value <= 0){
+			throw new IllegalArgumentException("The price can't be negative number!");
+		}
 		this.price = value;
 		
 	}
@@ -40,6 +46,9 @@ public abstract class Recipe implements IRecipe {
 	}
 	@Override
 	public void setCalories(int value) {
+		if(value <= 0){
+			throw new IllegalArgumentException("The calories can;t be negative number!");
+		}
 		this.calories = value;
 		
 	}
@@ -49,6 +58,9 @@ public abstract class Recipe implements IRecipe {
 	}
 	@Override
 	public void setQuantityPerServing(int value) {
+		if(value <=0 ) {
+			throw new IllegalArgumentException("The quantity per serving can't be negative number!");
+		}
 		this.quantityPerServing = value;
 		
 	}
@@ -66,6 +78,9 @@ public abstract class Recipe implements IRecipe {
 	}
 	@Override
 	public void setTimeToPrepare(int value) {
+		if(value <= 0){
+			throw new IllegalArgumentException("The time to prepare can't be negative number");
+		}
 		this.timeToPrepare = value;
 		
 	}
